@@ -1,7 +1,7 @@
-// Java Program to Implement Heaps
-// by Illustrating Min Heap
-
-// Main class (MinHeap)
+/*Min Heap in Java
+Time Complexity:o(logn)
+Space Complexity: O(1)
+ */
 class MinHeap {
 
     // Member variables of this class
@@ -13,8 +13,7 @@ class MinHeap {
     private static final int FRONT = 1;
 
     // Constructor of this class
-    public GFG(int maxsize)
-    {
+    public MinHeap(int maxsize) {
 
         // This keyword refers to current object itself
         this.maxsize = maxsize;
@@ -24,7 +23,6 @@ class MinHeap {
         Heap[0] = Integer.MIN_VALUE;
     }
 
-    // Method 1
     // Returning the position of
     // the parent for the node currently
     // at pos
@@ -32,14 +30,12 @@ class MinHeap {
         return pos / 2;
     }
 
-    // Method 2
     // Returning the position of the
     // left child for the node currently at pos
     private int leftChild(int pos) {
         return (2 * pos);
     }
 
-    // Method 3
     // Returning the position of
     // the right child for the node currently
     // at pos
@@ -47,7 +43,6 @@ class MinHeap {
         return (2 * pos) + 1;
     }
 
-    // Method 4
     // Returning true if the passed
     // node is a leaf node
     private boolean isLeaf(int pos) {
@@ -59,7 +54,6 @@ class MinHeap {
         return false;
     }
 
-    // Method 5
     // To swap two nodes of the heap
     private void swap(int fpos, int spos) {
 
@@ -70,7 +64,6 @@ class MinHeap {
         Heap[spos] = tmp;
     }
 
-    // Method 6
     // To heapify the node at pos
     private void minHeapify(int pos) {
         if (!isLeaf(pos)) {
@@ -91,7 +84,6 @@ class MinHeap {
         }
     }
 
-    // Method 7
     // To insert a node into the heap
     public void insert(int element) {
 
@@ -108,7 +100,6 @@ class MinHeap {
         }
     }
 
-    // Method 8
     // To print the contents of the heap
     public void print() {
         for (int i = 1; i <= size / 2; i++) {
@@ -124,7 +115,6 @@ class MinHeap {
         }
     }
 
-    // Method 9
     // To remove and return the minimum
     // element from the heap
     public int remove() {
